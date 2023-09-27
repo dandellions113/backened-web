@@ -1,0 +1,45 @@
+# Dependency directories
+node_modules/
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Compiled binary addons (node-gyp)
+build/
+.build/
+
+# OS or Editor files
+.DS_Store
+Thumbs.db
+
+# Dependency lock files
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+yarn.lock
+
+# dotenv environment variable files
+.env
+
+# IDE-specific files (e.g., VSCode, WebStorm, etc.)
+.vscode/
+.idea/
+
+# User-specific files
+.npmrc
+yarnrc
+yarn-error.log
+yarn-debug.log
+
+# Docker
+.dockerignore
+
+# Environment-specific config files
+config/*.env
