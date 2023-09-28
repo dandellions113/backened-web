@@ -15,7 +15,6 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-
   department: {
     type: String,
     required: true,
@@ -28,6 +27,12 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  savednewsarticles: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Article", // Reference to the Article model
+    },
+  ],
   // You can add more fields as needed
 });
 
