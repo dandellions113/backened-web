@@ -8,7 +8,6 @@ const articleSchema = new Schema({
   },
   Description: {
     type: String,
-    required: true,
   },
   Img: {
     type: String, // URL for the article's image
