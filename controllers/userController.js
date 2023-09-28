@@ -87,3 +87,35 @@ async function getUserData(req, res) {
 }
 
 export { getUserData };
+
+// Controller to update user profile data
+export const updateUserProfile = async (req, res) => {
+  try {
+    const userId = req.userId; // Assuming req.userId is set by the authenticate middleware
+    const updates = req.body; // Data to update
+
+    // Ensure that the user exists
+    const user = await User.findById(userId);
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    // Update user data
+    for (const key in updates) {
+      if (updates.hasOwnProperty(key)) {
+        user[key] = updates[key];
+      }
+    }
+
+    // Save the updated user data
+    await user.save();
+
+    res
+      .status(200)
+      .json({ message: "User profile updated successfully", user });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
