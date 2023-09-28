@@ -71,7 +71,6 @@ async function getUserData(req, res) {
     // Assume you have user authentication in place
     // Retrieve user data based on the authenticated user's ID or any other criteria
     const userId = req.userId; // Get the user ID from authentication (you may use your own logic)
-    console.log(req);
 
     // Query the user data by ID
     const userData = await User.findById(userId);

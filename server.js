@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import userRoutes from "./routes/userRoutes.js";
+import articleRoutes from "./routes/articleRoutes.js";
 import cors from "cors";
 
 const app = express();
@@ -19,6 +20,8 @@ app.get("/", (req, res) => {
 //routes
 
 app.use("/api/users", userRoutes);
+// API routes
+app.use("/api/articles", articleRoutes);
 
 //cors configuration
 const corsOptions = {
